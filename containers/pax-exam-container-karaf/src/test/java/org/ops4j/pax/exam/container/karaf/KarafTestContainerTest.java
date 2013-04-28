@@ -46,8 +46,8 @@ public class KarafTestContainerTest {
     public Option[] config() {
         return new Option[] {
             karafDistributionConfiguration()
-                .frameworkUrl(maven("org.apache.karaf", "apache-karaf", "3.0.0.RC1").type("zip"))
-                .karafVersion("3.0.0.RC1").useDeployFolder(false),
+                .frameworkUrl(maven("org.apache.karaf", "apache-karaf", "2.2.9").type("zip"))
+                .karafVersion("2.2.9").useDeployFolder(false),
             configureConsole().ignoreLocalConsole().startRemoteShell(), logLevel(LogLevel.INFO) };
     }
 
@@ -55,7 +55,7 @@ public class KarafTestContainerTest {
     public void checkKarafSystemService() throws Exception {
         assertThat(bc, is(notNullValue()));
         ServiceReference serviceRef = bc
-            .getServiceReference("org.apache.karaf.system.SystemService");
+            .getServiceReference("org.apache.karaf.features.FeaturesService");
         Object service = bc.getService(serviceRef);
         assertThat(service, is(notNullValue()));
     }

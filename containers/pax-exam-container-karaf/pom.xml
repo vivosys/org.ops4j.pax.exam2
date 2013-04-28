@@ -13,7 +13,7 @@
     <name>OPS4J Pax Exam - Karaf Container</name>
     
     <properties>
-        <karaf.version>3.0.0.RC1</karaf.version>
+        <karaf.version>2.2.9</karaf.version>
     </properties>
 
     <dependencies>
